@@ -7,6 +7,5 @@ export function divide(a: number, b: number): number {
 }
 
 export function normalizeEmail(input: string): string {
-  if (typeof input !== 'string') throw new TypeError('normalizeEmail: input must be a string');
-  return input.toLowerCase();
+  return input.trim().toLowerCase();
 }
