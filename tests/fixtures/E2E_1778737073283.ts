@@ -2,11 +2,11 @@
 // Generated at 2026-05-14T05:37:53.283Z — safe to delete.
 
 export function divide(a: number, b: number): number {
-  // Bug 1: no zero check — silently returns Infinity / NaN.
+  if (b === 0) throw new Error('division by zero');
   return a / b;
 }
 
-export function normalizeEmail(input: any): string {
-  // Bug 2: untyped param, no null guard.
+export function normalizeEmail(input: string): string {
+  if (typeof input !== 'string') throw new TypeError('normalizeEmail: input must be a string');
   return input.toLowerCase();
 }
